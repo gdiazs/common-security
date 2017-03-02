@@ -1,0 +1,35 @@
+CREATE TABLE users (
+		id INTEGER NOT NULL,
+		user_name VARCHAR(100) NOT NULL,
+		password VARCHAR(100) NOT NULL,
+		email VARCHAR(50) NOT NULL,
+		name VARCHAR(100) NOT NULL,
+		fathers_name VARCHAR(100) NOT NULL,
+		mothers_name VARCHAR(100) NOT NULL,
+		date_birth DATE NOT NULL,
+		account_non_expired INTEGER DEFAULT 1,
+		credentials_non_expired INTEGER DEFAULT 1,
+		account_non_locked INTEGER DEFAULT 1,
+		last_password_reset_date TIMESTAMP,
+		enabled INTEGER,
+		created_at TIMESTAMP NOT NULL,
+		updated_at TIMESTAMP NOT NULL
+);
+
+
+CREATE TABLE authorities (
+		id INTEGER NOT NULL,
+		authority VARCHAR(100) NOT NULL,
+		enabled INTEGER DEFAULT 1,
+		created_at DATE NOT NULL,
+		updated_at DATE NOT NULL
+	);
+
+
+CREATE TABLE USERS_AUTHORITIES(
+	USER_ID INTEGER NOT NULL,
+	AUTHORITY_ID INTEGER NOT NULL,
+	FOREIGN KEY(USER_ID) REFERENCES USERS(ID),
+	FOREIGN KEY(AUTHORITY_ID) REFERENCES AUTHORITIES(ID)
+);
+
