@@ -17,7 +17,7 @@ public class AuthenticationControllerTest extends WebSecurityConfigurationAware 
 	public void testAuthenticationRequest() throws Exception {
 		AuthenticationRequestDto authentication = new AuthenticationRequestDto();
 		authentication.setUsername("admin");
-		authentication.setUsername("Test1234");
+		authentication.setPassword("Test1234");
 		
 		Device device = new Device() {
 			
