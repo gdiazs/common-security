@@ -4,6 +4,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.Test;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.ResultActions;
 
 import com.guillermods.common.security.config.TestUtil;
@@ -21,7 +22,7 @@ public class AuthenticationControllerTest extends WebSecurityConfigurationAware 
 		authentication.setPassword("Test1234");
 		String jsonAuthentication = TestUtil.convertObjectToJsonString(authentication);
 		System.out.println(jsonAuthentication);
-		ResultActions res = mockMvc.perform(post("/auth").contentType(TestUtil.APPLICATION_JSON_UTF8)
+		ResultActions res = mockMvc.perform(post("/auth").contentType(MediaType.APPLICATION_JSON_UTF8_VALUE)
 		        .content(jsonAuthentication));
 		res.andExpect(status().isOk());
 	}
