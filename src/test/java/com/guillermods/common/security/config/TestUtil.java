@@ -19,6 +19,12 @@ public class TestUtil {
     }
     
     
+    public static String convertObjectToJsonString(Object object) throws IOException {        
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+        return mapper.writeValueAsString(object);
+      }
+    
     public static String pojoToJSon(Object object){
     	ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
     	String json = null;
