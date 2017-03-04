@@ -45,7 +45,7 @@
 	</properties>
 
 	<dependencies>
-	
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -140,8 +140,15 @@
 			<scope>test</scope>
 			<version>${junit.version}</version>
 		</dependency>
-		
-		
+
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.10.19</version>
+			<scope>test</scope>
+		</dependency>
+
+
 
 	</dependencies>
 

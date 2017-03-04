@@ -8,24 +8,25 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.ResultActions;
 
 import com.guillermods.common.security.config.TestUtil;
-import com.guillermods.common.security.config.WebSecurityConfigurationAware;
+import com.guillermods.common.security.config.WebTestConfigAware;
 
-public class AuthenticationControllerTest extends WebSecurityConfigurationAware {
+public class AuthenticationControllerTest extends WebTestConfigAware {
+
+  @Test
+  public void testAuthenticationRequest() throws Exception {
+    AuthenticationRequestDto authentication = new AuthenticationRequestDto();
+    authentication.setUsername("admin");
+    authentication.setPassword("Test1234");
+
+    String jsonAuthentication = TestUtil.convertObjectToJsonString(authentication);
+
+    ResultActions res = mockMvc.perform(post("/auth")
+        .contentType(MediaType.APPLICATION_JSON_UTF8_VALUE).content(jsonAuthentication));
+    res.andExpect(status().isOk());
 
 
+  }
 
-	
-	@Test
-	public void testAuthenticationRequest() throws Exception {
-		AuthenticationRequestDto authentication = new AuthenticationRequestDto();
-		authentication.setUsername("admin");
-		authentication.setPassword("Test1234");
-		String jsonAuthentication = TestUtil.convertObjectToJsonString(authentication);
-		System.out.println(jsonAuthentication);
-		ResultActions res = mockMvc.perform(post("/auth").contentType(MediaType.APPLICATION_JSON_UTF8_VALUE)
-		        .content(jsonAuthentication));
-		res.andExpect(status().isOk());
-	}
 
 
 }
