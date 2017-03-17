@@ -1,11 +1,10 @@
 language: java
 jdk:
   - oraclejdk8
-
+  
 addons:
   sonarqube:
     token:
-      secure: dde0b8ce870e6bf81fc6f7613e5c820df6f1c5ff
+      secure: b6d779e3889c0fb0a9cefc8123332756a15917b1 # encrypted value of your token
 script:
-  - mvn clean install
-  - sonar-scanner
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
