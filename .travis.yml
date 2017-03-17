@@ -5,8 +5,7 @@ jdk:
 addons:
   sonarqube:
     token:
-      secure: dde0b8ce870e6bf81fc6f7613e5c820df6f1c5ff # encrypted value of your token
+      secure: dde0b8ce870e6bf81fc6f7613e5c820df6f1c5ff
 script:
-  # other script steps might be done before running the actual SonarQube analysis
   - mvn clean install
   - sonar-scanner
