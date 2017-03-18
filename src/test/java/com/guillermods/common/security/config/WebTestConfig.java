@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.guillermods.common.security.config;
 
 import java.util.List;
@@ -14,10 +11,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.mvc.method.annotation.ServletWebArgumentResolverAdapter;
 
-/**
- * @author Memo
- *
- */
+
 @Configuration
 @EnableWebMvc
 @Import({RootTestConfig.class, WebCommonSecurityConfig.class})

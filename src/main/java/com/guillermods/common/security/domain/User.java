@@ -1,6 +1,3 @@
-/**
- * Copyright (C) 2016 Guillermo Díaz Solís. Todos los derechos reservados.
- */
 package com.guillermods.common.security.domain;
 
 import java.util.Date;
@@ -17,10 +14,6 @@ import javax.persistence.Table;
 
 import org.springframework.security.core.userdetails.UserDetails;
 
-/**
- * @author Guillermo B Díaz Solís
- * @since 29 de may. de 2016
- */
 @Entity
 @Table(name = "users")
 public class User implements UserDetails {

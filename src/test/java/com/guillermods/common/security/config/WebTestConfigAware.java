@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.guillermods.common.security.config;
 
 import org.junit.Before;
@@ -15,10 +12,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-/**
- * @author Memo
- *
- */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {WebTestConfig.class})
 @WebAppConfiguration

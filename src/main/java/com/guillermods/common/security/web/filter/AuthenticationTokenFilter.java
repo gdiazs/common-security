@@ -1,7 +1,3 @@
-/**
- * Copyright (C) 2016 Guillermo Díaz Solís.
- * Todos los derechos reservados.
- */
 package com.guillermods.common.security.web.filter;
 
 import java.io.IOException;
