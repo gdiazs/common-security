@@ -68,12 +68,4 @@ public class AuthenticationController {
     }
   }
 
-
-  @RequestMapping(value = "test", method = RequestMethod.POST)
-  public ResponseEntity<AuthenticationResponseDto> test(
-      @RequestBody AuthenticationRequestDto requestDto) {
-
-    return ResponseEntity.ok(new AuthenticationResponseDto("1293847189234"));
-  }
-
 }

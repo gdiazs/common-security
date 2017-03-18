@@ -22,6 +22,7 @@ public class AuthenticationControllerTest extends WebTestConfigAware {
 
     ResultActions res = mockMvc.perform(post("/auth")
         .contentType(MediaType.APPLICATION_JSON_UTF8_VALUE).content(jsonAuthentication));
+
     res.andExpect(status().isOk());
 
 
