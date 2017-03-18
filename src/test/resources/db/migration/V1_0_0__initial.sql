@@ -23,7 +23,7 @@ CREATE TABLE authorities (
 		enabled INTEGER DEFAULT 1,
 		created_at DATE NOT NULL,
 		updated_at DATE NOT NULL
-	);
+);
 
 
 CREATE TABLE USERS_AUTHORITIES(

@@ -6,6 +6,7 @@ package com.guillermods.common.security.config;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mobile.device.DeviceResolverRequestFilter;
 import org.springframework.security.web.FilterChainProxy;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -34,8 +35,10 @@ public class WebTestConfigAware {
   @Before
   public void setup() {
     mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
-    mockMvc = MockMvcBuilders.webAppContextSetup(context).addFilters(this.springSecurityFilterChain)
-        .build();
+    DeviceResolverRequestFilter deviceResolverRequestFilter = new DeviceResolverRequestFilter();
+
+    mockMvc = MockMvcBuilders.webAppContextSetup(context)
+        .addFilters(this.springSecurityFilterChain, deviceResolverRequestFilter).build();
   }
 
 

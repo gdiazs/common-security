@@ -4,10 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.http.HttpRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.mobile.device.Device;
-import org.springframework.mobile.device.DeviceUtils;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -23,8 +21,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.guillermods.common.security.config.SecurityConstants;
 import com.guillermods.common.security.domain.User;
 import com.guillermods.common.security.jwt.TokenGenerator;
-
-import io.jsonwebtoken.lang.Assert;
 
 @RestController
 @RequestMapping("/auth")
@@ -43,10 +39,8 @@ public class AuthenticationController {
 
   @RequestMapping(method = RequestMethod.POST)
   public ResponseEntity<?> authenticationRequest(
-      @RequestBody AuthenticationRequestDto authenticationRequest, HttpServletRequest request)
+      @RequestBody AuthenticationRequestDto authenticationRequest, Device device)
       throws AuthenticationException {
-
-    Device device = DeviceUtils.getCurrentDevice(request);
     
     Authentication authentication =
         this.authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
